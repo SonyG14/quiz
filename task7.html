@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <title>Завдання 7</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      max-width: 600px;
+      margin: auto;
+      padding: 20px;
+      background-color: #efb8f5;
+      color: #1e1b1b;
+    }
+
+    input {
+      font-size: 1rem;
+      padding: 10px;
+      width: 90%;
+      box-sizing: border-box;
+      border: 2px solid #a84caf;
+      border-radius: 8px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      transition: 0.3s;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: #7e388e;
+      background-color: #f0fff0;
+    }
+
+    button {
+      font-size: 1rem;
+      padding: 10px 20px;
+      background-color: #a84caf;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #8b388e;
+    }
+
+    #result {
+      margin-top: 15px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h2>Завдання 7</h2>
+  <h3>Що зображено на фото?</h3>
+
+  <img src="1.jpeg" alt="Фото завдання" style="max-width: 100%; border-radius: 10px; margin: 15px 0;" />
+
+
+  <input type="text" id="answer" placeholder="Ваша відповідь" />
+  <button onclick="checkAnswer()">Перевірити</button>
+
+  <p id="result"></p>
+
+  <script>
+    function checkAnswer() {
+      const userAnswer = document.getElementById("answer").value.trim().toLowerCase();
+      const correctAnswer = "світшот";
+
+      const result = document.getElementById("result");
+      if (userAnswer === correctAnswer) {
+        result.textContent = "Правильно! Літера для пароля: N";
+        result.style.color = "green";
+      } else {
+        result.textContent = "Неправильно. Спробуйте ще!";
+        result.style.color = "red";
+      }
+    }
+  </script>
+</body>
+</html>
