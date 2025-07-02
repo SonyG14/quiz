@@ -9,25 +9,52 @@
       max-width: 600px;
       margin: auto;
       padding: 20px;
-      background-color: #dd75f8; /* світло-блакитний фон */
-      color: #1e1b1b; /* темно-сірий текст */
+      background-color: #b8f5c3; /* світло-зелений фон */
+      color: #1e1b1b;
     }
 
-    input, button {
+    input {
       font-size: 1rem;
-      padding: 8px;
+      padding: 10px;
+      width: 90%;
+      box-sizing: border-box;
+      border: 2px solid #4CAF50;
+      border-radius: 8px;
       margin-top: 10px;
+      margin-bottom: 10px;
+      transition: 0.3s;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: #388e3c;
+      background-color: #f0fff0;
+    }
+
+    button {
+      font-size: 1rem;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #388e3c;
     }
 
     #result {
-      margin-top: 10px;
+      margin-top: 15px;
       font-weight: bold;
     }
   </style>
 </head>
 <body>
   <h2>Завдання 1</h2>
-  <p>Скільки буде 5 + 7?</p>
+  <h3>Як називається найбільший орган у тілі людини?</h3>
 
   <input type="text" id="answer" placeholder="Ваша відповідь" />
   <button onclick="checkAnswer()">Перевірити</button>
@@ -36,15 +63,15 @@
 
   <script>
     function checkAnswer() {
-      const userAnswer = document.getElementById("answer").value.trim();
-      const correctAnswer = "12";
+      const userAnswer = document.getElementById("answer").value.trim().toLowerCase();
+      const correctAnswer = "шкіра";
 
       const result = document.getElementById("result");
       if (userAnswer === correctAnswer) {
-        result.textContent = " Правильно! Молодець!";
+        result.textContent = "Правильно! Літера для пароля: I";
         result.style.color = "green";
       } else {
-        result.textContent = " Неправильно. Спробуй ще!";
+        result.textContent = "Неправильно. Спробуйте ще!";
         result.style.color = "red";
       }
     }
